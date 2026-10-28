@@ -1,0 +1,808 @@
+@font-face {
+    font-family: "Bristol";
+    src: url("Bristol.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --charcoal: #181818;
+    --off-white: #f8f7f0;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    background: var(--off-white);
+    color: var(--charcoal);
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   HOMEPAGE
+===================================================== */
+
+.home-page {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+
+    overflow: hidden;
+}
+
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.title-area {
+    position: absolute;
+
+    top: 19%;
+    left: 5.5%;
+
+    width: 90%;
+
+    z-index: 3;
+}
+
+
+h1 {
+    margin: 0;
+
+    font-family: "Bristol", Georgia, serif;
+    font-size: clamp(45px, 6.7vw, 75px);
+    font-weight: normal;
+
+    line-height: 0.9;
+    letter-spacing: -0.025em;
+
+    white-space: nowrap;
+}
+
+
+.subtitle {
+    position: absolute;
+
+    left: 54.5%;
+    top: 105px;
+
+    margin: 0;
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(14px, 1.35vw, 17px);
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* ---------- PORTRAIT ---------- */
+
+.portrait-container {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    height: 66vh;
+    height: 66svh;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    cursor: crosshair;
+}
+
+
+.portrait-container img {
+    display: block;
+
+    height: 100%;
+    width: auto;
+
+    transform: scaleX(1);
+    transform-origin: center;
+
+    transition:
+        transform 0.2s ease;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+/* ---------- NAV ---------- */
+
+.main-nav {
+    position: absolute;
+
+    left: 5.5%;
+    bottom: 6%;
+
+    z-index: 4;
+
+    display: flex;
+    gap: 3.5vw;
+}
+
+
+.main-nav a,
+.work-nav a {
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-weight: 500;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.main-nav a:hover,
+.work-nav a:hover {
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   WORK PAGE
+===================================================== */
+
+.work-page {
+    height: 100vh;
+    height: 100svh;
+
+    overflow: hidden;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.page-header {
+    position: absolute;
+
+    top: 5%;
+    left: 5.5%;
+    right: 5.5%;
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.back-link {
+    font-family: "Bristol", Georgia, serif;
+
+    font-size: clamp(25px, 3vw, 40px);
+}
+
+
+.work-nav {
+    display: flex;
+    gap: 2.5vw;
+}
+
+
+/* ---------- WORK ---------- */
+
+.work-main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 14vh;
+}
+
+
+.work-intro {
+    padding-left: 5.5%;
+
+    flex-shrink: 0;
+}
+
+
+.work-intro h1 {
+    font-size: clamp(55px, 8vw, 100px);
+}
+
+
+/* ---------- CAROUSEL ---------- */
+
+.carousel-wrapper {
+    position: relative;
+
+    flex: 1;
+
+    min-height: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 6vw;
+}
+
+
+.carousel {
+    width: 100%;
+    height: 65vh;
+
+    display: flex;
+    align-items: center;
+
+    gap: 2vw;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    cursor: grab;
+}
+
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+.carousel:active {
+    cursor: grabbing;
+}
+
+
+/* ---------- CARDS ---------- */
+
+.project-card {
+    flex: 0 0 28vw;
+
+    height: 52vh;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.project-image {
+    width: 100%;
+    height: 40vh;
+
+    overflow: hidden;
+
+    transition:
+        height 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* ---------- TEXT UNDER IMAGE ---------- */
+
+.project-info {
+    padding-top: 1.2rem;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.project-info h2 {
+    margin: 0 0 0.4rem;
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.project-info p {
+    margin: 0;
+
+    max-width: 28rem;
+
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+
+/* ---------- HOVER ---------- */
+
+/*
+   When hovering a project:
+   - image becomes smaller
+   - text disappears
+*/
+
+.project-card:hover .project-image {
+    height: 31vh;
+}
+
+
+.project-card:hover .project-info {
+    opacity: 0;
+
+    transform: translateY(10px);
+}
+
+
+/* ---------- ARROWS ---------- */
+
+.carousel-button {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--charcoal);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+}
+
+
+.carousel-button:hover {
+    opacity: 0.4;
+}
+
+
+.previous {
+    left: 1.5vw;
+}
+
+
+.next {
+    right: 1.5vw;
+}
+
+
+/* =====================================================
+   PROJECT PAGE
+===================================================== */
+
+.project-page {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.project-main {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    align-items: center;
+
+    padding: 12vh 5.5vw 7vh;
+}
+
+
+.project-large-image {
+    width: 90%;
+    height: 70vh;
+
+    overflow: hidden;
+}
+
+
+.project-large-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.project-text {
+    max-width: 480px;
+
+    padding-right: 5vw;
+}
+
+
+.project-category {
+    margin: 0 0 1.5rem;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+
+.project-text h1 {
+    margin-bottom: 2rem;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    white-space: normal;
+}
+
+
+.project-text > p:not(.project-category) {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+
+.project-link {
+    display: inline-block;
+
+    margin-top: 2rem;
+
+    padding: 12px 20px;
+
+    border: 1px solid var(--charcoal);
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.project-link:hover {
+    background: var(--charcoal);
+    color: var(--off-white);
+}
+
+
+.project-subtitle {
+    margin: 0 0 1.2rem;
+
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+.about-main {
+    max-width: 760px;
+
+    padding: 18vh 5.5vw 10vh;
+}
+
+
+.about-section + .about-section {
+    margin-top: 12vh;
+}
+
+
+.about-section h1 {
+    margin-bottom: 2rem;
+
+    font-size: clamp(55px, 8vw, 100px);
+}
+
+
+.about-text p {
+    margin: 0 0 1.2rem;
+
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+
+.text-link {
+    border-bottom: 1px solid var(--charcoal);
+
+    transition: opacity 0.2s ease;
+}
+
+
+.text-link:hover {
+    opacity: 0.45;
+}
+
+
+/* =====================================================
+   IMAGE PLACEHOLDER
+   (shown when a project has no picture yet)
+===================================================== */
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: #e9e6d6;
+
+    font-family: "Bristol", Georgia, serif;
+    font-size: clamp(24px, 3vw, 40px);
+    text-align: center;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* ---------- HOME ---------- */
+
+    .home-page {
+        height: 100svh;
+    }
+
+
+    .title-area {
+        top: 8%;
+        left: 6%;
+        width: 88%;
+    }
+
+
+    .title-area h1 {
+        font-size: 14vw;
+        line-height: 0.88;
+
+        white-space: normal;
+    }
+
+
+    .subtitle {
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        margin-top: 24px;
+
+        font-size: 15px;
+
+        white-space: normal;
+    }
+
+
+    .portrait-container {
+        height: 58svh;
+        bottom: 7svh;
+    }
+
+
+    /* soft fade so the trousers do not end in a hard edge */
+    .portrait-container img {
+        -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+        mask-image: linear-gradient(to bottom, #000 82%, transparent);
+    }
+
+
+    .main-nav {
+        left: 6%;
+        right: 6%;
+        bottom: 3.5%;
+
+        justify-content: space-between;
+
+        gap: 0;
+    }
+
+
+    /* ---------- WORK ---------- */
+
+    .work-page {
+        height: 100svh;
+    }
+
+
+    .page-header {
+        top: 4%;
+        left: 6%;
+        right: 6%;
+    }
+
+
+    .back-link {
+        font-size: 24px;
+    }
+
+
+    .work-nav {
+        gap: 5vw;
+    }
+
+
+    .work-nav a {
+        font-size: 14px;
+    }
+
+
+    .work-main {
+        padding-top: 13vh;
+    }
+
+
+    .work-intro {
+        padding-left: 6%;
+    }
+
+
+    .work-intro h1 {
+        font-size: 16vw;
+    }
+
+
+    .carousel-wrapper {
+        padding: 0 6vw;
+    }
+
+
+    .carousel {
+        height: 65vh;
+
+        gap: 6vw;
+    }
+
+
+    .project-card {
+        flex: 0 0 76vw;
+
+        height: 50vh;
+    }
+
+
+    .project-image {
+        height: 38vh;
+    }
+
+
+    /*
+       No hover behaviour on touch screens.
+       The text stays visible so the user knows
+       what they are clicking.
+    */
+
+    .project-card:hover .project-image {
+        height: 38vh;
+    }
+
+
+    .project-card:hover .project-info {
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .carousel-button {
+        display: none;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-main {
+        padding: 15vh 6vw 8vh;
+    }
+
+
+    .about-section h1 {
+        font-size: 16vw;
+    }
+
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+
+    /* ---------- PROJECT ---------- */
+
+    .project-page {
+        height: 100svh;
+
+        overflow: auto;
+    }
+
+
+    .project-main {
+        min-height: 100svh;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 15vh 6vw 8vh;
+    }
+
+
+    .project-large-image {
+        width: 100%;
+        height: 43vh;
+    }
+
+
+    .project-text {
+        padding: 2rem 0 0;
+
+        max-width: none;
+    }
+
+
+    .project-text h1 {
+        font-size: 13vw;
+
+        margin-bottom: 1.2rem;
+    }
+
+
+    .project-text > p:not(.project-category) {
+        font-size: 15px;
+    }
+
+}

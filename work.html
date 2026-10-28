@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work — Rosalie Blom</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="work-page">
+
+    <header class="page-header">
+
+        <a href="index.html" class="back-link">
+            ← home
+        </a>
+
+        <nav class="work-nav">
+            <a href="about.html">about</a>
+            <a href="work.html">work</a>
+            <a href="about.html#contact">contact</a>
+        </nav>
+
+    </header>
+
+
+    <main class="work-main">
+
+        <div class="work-intro">
+            <h1>work</h1>
+        </div>
+
+
+        <section class="carousel-wrapper">
+
+            <button
+                class="carousel-button previous"
+                id="previous"
+                aria-label="Previous project"
+            >
+                ←
+            </button>
+
+
+            <!-- The project cards are built by work.js from projects.js -->
+            <div class="carousel" id="carousel"></div>
+
+
+            <button
+                class="carousel-button next"
+                id="next"
+                aria-label="Next project"
+            >
+                →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="projects.js"></script>
+    <script src="work.js"></script>
+
+</body>
+</html>
