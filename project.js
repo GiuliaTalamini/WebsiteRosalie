@@ -24,4 +24,11 @@ document.getElementById("project-image").appendChild(
     createProjectImage(project)
 );
 
+if (project.type) {
+    const label = document.createElement("span");
+    label.className = "project-label";
+    label.textContent = project.type;
+    document.getElementById("project-image").appendChild(label);
+}
+
 document.getElementById("project-link").href = project.url;

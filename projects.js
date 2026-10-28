@@ -2,6 +2,7 @@
     All the work lives here. Add a project by adding an object
     to this list: work.html and project.html pick it up by themselves.
 
+    type     = small label: "artikel", "interview", ...
     kicker   = the platform / client
     title    = boventitel
     subtitle = ondertitel
@@ -10,6 +11,7 @@
 */
 const PROJECTS = [
     {
+        type: "artikel",
         kicker: "Culture Weekly",
         title: "Behind its mask",
         subtitle: "Analyse: postkoloniale mimicry in Radna Fabia’s gedicht ‘aantoonbaar geleverde inspanning’",
@@ -18,6 +20,7 @@ const PROJECTS = [
         image: "artikelpalmbomen.png"
     },
     {
+        type: "webtekst",
         kicker: "Radboud Creative Collective",
         title: "Leertraject duurzaam leiderschap",
         subtitle: "Vergroot jouw impact als duurzame leider",
@@ -26,6 +29,7 @@ const PROJECTS = [
         image: "_DSC9365.png"
     },
     {
+        type: "interview",
         kicker: "Jeugdbescherming",
         title: "Zeg wat je doet, doe wat je zegt",
         subtitle: "Interview met trainee gezinsmanager Lotte",
@@ -34,6 +38,7 @@ const PROJECTS = [
         image: "_DSC9364.png"
     },
     {
+        type: "artikel",
         kicker: "Tijdschrift Lover",
         title: "Good for her",
         subtitle: "De groeiende populariteit van fictieve vrouwelijke woede",
@@ -42,6 +47,7 @@ const PROJECTS = [
         image: "_DSC9357.png"
     },
     {
+        type: "interview",
         kicker: "Tijdschrift Lover",
         title: "Inclusie in de Nijmeegse skatescene",
         subtitle: "Interview met collectief de Rollende Minas",
@@ -50,6 +56,7 @@ const PROJECTS = [
         image: ""
     },
     {
+        type: "reportage",
         kicker: "3voor12 Lokaal",
         title: "Zingen zonder erbij na te denken",
         subtitle: "Een rapportage over Koor Duniya",
@@ -58,6 +65,7 @@ const PROJECTS = [
         image: ""
     },
     {
+        type: "interview",
         kicker: "3voor12 Lokaal",
         title: "Maria Iskariot komt (terug) naar Utrecht",
         subtitle: "Interview met Helena Cazaerk van punkband Maria Iskariot",
